@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TipCalculatorProject.MainPage">
+
+    
+
+    <StackLayout Orientation="Vertical">
+        <Frame>
+            <Grid Margin="10,50,20,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label x:Name="billAmountLabel" FontSize="Title" Text="Bill:" TextColor="#4B2727"  HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.Column="0"  Grid.Row="0"/>
+                <Label x:Name="tipAmountLabel"  FontSize="Title" Text="Tip:" TextColor="#4B2727"   HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="1" />
+                <Label x:Name="totalAmountLabel" FontSize="Title" Text="Total:" TextColor="#4B2727"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="0" Grid.Row="2" />
+                <Label x:Name="billTotalLabel" FontSize="Title" Text="$0.00" TextColor="#836464" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="1"  Grid.Row="0"/>
+                <Label x:Name="tipTotalLabel" FontSize="Title" Text="$0.00" TextColor="#836464"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="1" Grid.Row="1" />
+                <Label x:Name="totatTotalLabel" FontSize="Title" Text="$0.00" TextColor="#836464"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="1" Grid.Row="2" />
+                <Label x:Name="splitAmountLabel" FontSize="Title" Text="Per Person:" TextColor="#4B2727"  HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" Grid.Column="0"  Grid.Row="3"/>
+                <Label x:Name="splitTotalLabel" FontSize="Title" Text="$0" TextColor="#836464" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Grid.Column="1"  Grid.Row="3"/>
+               
+        
+            </Grid>
+           
+        </Frame>
+       
+        <StackLayout Orientation="Horizontal" Margin="50,15,15,30">
+           
+             <Slider x:Name="percentageSlider" Minimum="0" Maximum="100" ValueChanged="percentageSlider_ValueChanged" MinimumTrackColor="#E2BEBE" ThumbColor="#E2BEBE"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+             <Label x:Name="percentageLabel" Text="10%" TextColor="#836464" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" FontSize="Title" />
+              
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="50,15,15,30">
+           
+            <Stepper x:Name="numberOfDinersStepper" Minimum="1" Maximum="20" Increment="1" BackgroundColor="#E2BEBE" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ValueChanged="numberOfDinersStepper_ValueChanged" />
+            <Label x:Name="numberOfDinersLabel" Text="1 person" TextColor="#836464" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" FontSize="Title" />
+             
+        </StackLayout>
+        <Frame>
+            <Grid Margin="20,40,20,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="sevenButton" FontSize="Title" Text="7" BorderWidth="1" BorderRadius="20" BorderColor="#836464" HeightRequest="70" TextColor="#4B2727" BackgroundColor="#E2BEBE" HorizontalOptions="FillAndExpand" VerticalOptions="Center"  Grid.Column="0" Grid.Row="0" Clicked="CalculatorButtonTapped" />
+                <Button x:Name="eightButton" FontSize="Title" Text="8" BorderWidth="1" BorderRadius="20" BorderColor="#836464" HeightRequest="70" TextColor="#4B2727" BackgroundColor="#E2BEBE" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Column="1" Grid.Row="0" Clicked="CalculatorButtonTapped"  />
+                <Button x:Name="nineButton" FontSize="Title" Text="9" BorderWidth="1" BorderRadius="20" BorderColor="#836464" HeightRequest="70" TextColor="#4B2727" BackgroundColor="#E2BEBE" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Column="2" Grid.Row="0" Clicked="CalculatorButtonTapped" />
+                <Button x:Name="fourButton" FontSize="Title" Text="4" BorderWidth="1" BorderRadius="20" BorderColor="#836464" HeightRequest="70" TextColor="#4B2727" BackgroundColor="#E2BEBE" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Column="0" Grid.Row="1" Clicked="CalculatorButtonTapped" />
+                <Button x:Name="fiveButton" FontSize="Title" Text="5" BorderWidth="1" BorderRadius="20" BorderColor="#836464" HeightRequest="70" TextColor="#4B2727" BackgroundColor="#E2BEBE" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Column="1" Grid.Row="1" Clicked="CalculatorButtonTapped" />
+                <Button x:Name="sixButton" FontSize="Title" Text="6" BorderWidth="1" BorderRadius="20" BorderColor="#836464" HeightRequest="70" TextColor="#4B2727" BackgroundColor="#E2BEBE" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Column="2" Grid.Row="1" Clicked="CalculatorButtonTapped" />
+                <Button x:Name="oneButton" FontSize="Title" Text="1" BorderWidth="1" BorderRadius="20" BorderColor="#836464" HeightRequest="70" TextColor="#4B2727" BackgroundColor="#E2BEBE" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Column="0" Grid.Row="2" Clicked="CalculatorButtonTapped"  />
+                <Button x:Name="twoButton" FontSize="Title" Text="2" BorderWidth="1" BorderRadius="20" BorderColor="#836464" HeightRequest="70" TextColor="#4B2727" BackgroundColor="#E2BEBE" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Column="1" Grid.Row="2" Clicked="CalculatorButtonTapped" />
+                <Button x:Name="threeButton" FontSize="Title" Text="3" BorderWidth="1" BorderRadius="20" BorderColor="#836464" HeightRequest="70" TextColor="#4B2727" BackgroundColor="#E2BEBE" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Column="2" Grid.Row="2" Clicked="CalculatorButtonTapped" />
+                <Button x:Name="zeroButton" FontSize="Title" Text="0" BorderWidth="1" BorderRadius="20" BorderColor="#836464" HeightRequest="70" TextColor="#4B2727" BackgroundColor="#E2BEBE" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Column="0" Grid.Row="3" Clicked="CalculatorButtonTapped"  />
+                <Button x:Name="dotButton" FontSize="Title" Text="." BorderWidth="1" BorderRadius="20" BorderColor="#836464" HeightRequest="70" TextColor="#4B2727" BackgroundColor="#E2BEBE" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Column="1" Grid.Row="3" Clicked="CalculatorButtonTapped" />
+                <Button x:Name="cButton" FontSize="Title" Text="C" BorderWidth="1" BorderRadius="20" BorderColor="#836464" HeightRequest="70" TextColor="#4B2727" BackgroundColor="#E2BEBE" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Column="2" Grid.Row="3" Clicked="CalculatorButtonTapped"  />
+
+            </Grid>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>
